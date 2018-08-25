@@ -55,7 +55,7 @@ void search(Trie root, const unsigned char *text) {
         int j = i;
         p = root;
         while (text_temp[j] && p && p->next[text_temp[j] - BL]) {
-            search_times += 1;
+            search_times++;
             p = p->next[text_temp[j] - BL];
             if (p->flag == 1) {
                 printf("find word : %s", p->str);

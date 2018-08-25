@@ -101,7 +101,7 @@ int main() {
         strcpy((char *)buff[i], bit(i));
     }
     int total_count = 0;
-    FILE *fin = fopen("text", "r");
+    FILE *fin = fopen("./pattern", "r");
     if (fin == NULL) perror("fopen\n");
     unsigned char pattern[10000] = {0};
     Node *root = NULL;
@@ -111,7 +111,7 @@ int main() {
         root = insert(root, pattern);
     }
     unsigned char text[1000000] = {0};
-    FILE *fp = fopen("t", "r");
+    FILE *fp = fopen("text", "r");
     if (fp == NULL) perror("fopen\n");
     fscanf(fp, "%[^\n]s", text);
     search(root, text);

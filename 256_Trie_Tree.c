@@ -73,7 +73,7 @@ int main() {
     int ind[256] = {0};
     int count = 0;
     int total_count = 0;
-    FILE *fin = fopen("./text", "r");
+    FILE *fin = fopen("./pattern", "r");
     if (fin == NULL) {
         perror("text\n");
         return 0;
@@ -88,7 +88,7 @@ int main() {
         root = insert(root, buff);
     }
     unsigned char text[1000000] = {0};
-    FILE *fp = fopen("t", "r");
+    FILE *fp = fopen("text", "r");
     fscanf(fp, "%[^\n]s", text);
     search(root, text);
     printf("storage rate : %lf\n", 1.0 * total_count / (1.0 * node_cnt * sizeof(Node)));
